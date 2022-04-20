@@ -35,4 +35,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+          pull_branch=$(jq --raw-output .pull_request.head.ref "$GITHUB_EVENT_PATH")
+          pull_url=$(jq --raw-output .pull_request.html_url "$GITHUB_EVENT_PATH")
           echo $pull_number
+          echo $pull_branch
+          echo $pull_url
